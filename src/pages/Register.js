@@ -18,7 +18,7 @@ const Register = () => {
   }
 
   const onSubmit = (e) => {
-    e.preventDefalut()
+    e.preventDefault()
     console.log(e.target)
   }
 
@@ -27,7 +27,21 @@ const Register = () => {
       <form className='form' onSubmit={onSubmit}>
         <Logo />
         <h3>Login</h3>
-        <div className='form-row'></div>
+        <div className='form-row'>
+          <label htmlFor='name' className='form-label'>
+            name
+          </label>
+          <input
+            type='text'
+            name='name'
+            value={values.name}
+            onChange={handleChange}
+            className='form-input'
+          />
+        </div>
+        <button className='btn btn-block' type='submit'>
+          submit
+        </button>
       </form>
     </Wrapper>
   )
