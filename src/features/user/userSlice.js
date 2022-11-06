@@ -7,6 +7,7 @@ import {
   removeUserFromLocalStorage,
 } from '../../utils/localStorage'
 import { loginUserThunk, registerUserThunk, updateUserThunk } from './userThunk'
+import jobSlice from '../job/jobSlice'
 
 const initialState = {
   isLoading: false,
