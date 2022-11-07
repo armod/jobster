@@ -10,6 +10,10 @@ const JobsContainer = () => {
   const { jobs, isLoading } = useSelector((store) => store.allJobs)
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getAllJobs())
+  }, [])
+
   if (isLoading) {
     return <Loading center />
   }
@@ -21,10 +25,6 @@ const JobsContainer = () => {
       </Wrapper>
     )
   }
-
-  useEffect(() => {
-    dispatch(getAllJobs())
-  }, [])
 
   return (
     <Wrapper>
